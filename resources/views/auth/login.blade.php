@@ -1,13 +1,23 @@
-@extends('layouts.app')
-
-@section('content')
+@include('partials.headerGuest')
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 55%;
+    }
+</style>
+<br><br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card text-dark bg-light mb-3">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
+
+                    <img src="{{url('/img/logo_1.png')}}" alt="" class="img-responsive center" >
+                    <br>
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
@@ -53,7 +63,7 @@
 
                         <div class="form-group row mb-0">
                             <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-success">
                                     {{ __('Login') }}
                                 </button>
 
@@ -70,4 +80,5 @@
         </div>
     </div>
 </div>
-@endsection
+<br><br>
+@include('partials.footerGuestMain')
