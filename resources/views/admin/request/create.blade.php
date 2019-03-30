@@ -13,11 +13,9 @@
                             <div class="col-md-6">
                                 <select name="infra" id="infra">
                                     <option value="">Selecciones Infraestructura</option>
-                                    <option value="">Aula</option>
-                                    <option value="gym">Gimnasio</option>
-                                    <option value="library">Biblioteca</option>
-                                    <option value="auditory">Auditorio</option>
-                                    <option value="auditory">Materiales</option>
+                                    @foreach($infraestructures as $infraestructure)
+                                        <option value="{{$infraestructure->id}}">{{$infraestructure->description}}</option>
+                                    @endforeach
                                 </select>
 
                                 @if ($errors->has('infra'))
@@ -33,11 +31,9 @@
                             <div class="col-md-6">
                                 <select name="event" id="event">
                                     <option value="">Seleccionar Evento</option>
-                                    <option value="event">Charla Scrum</option>
-                                    <option value="event_tematic">Fiesta Tematica</option>
-                                    <option value="event_meeting">Reuniones</option>
-                                    <option value="event_study">Grupos de Estudio</option>
-                                    <option value="">Fiesta de egresados</option>
+                                    @foreach($events as $event)
+                                        <option value="{{$event->id}}">{{$event->description}}</option>
+                                    @endforeach
                                 </select>
 
                                 @if ($errors->has('event'))
@@ -48,19 +44,19 @@
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">Jornada</label>
+                            <label for="period" class="col-md-4 col-form-label text-md-right">Jornada</label>
 
                             <div class="col-md-6">
-                                <select name="event" id="event">
+                                <select name="period" id="period">
                                     <option value="">Selecciona Jornada</option>
-                                    <option value="morning">Mañana</option>
-                                    <option value="afternoon">Tarde</option>
-                                    <option value="night">Noche</option>
+                                    @foreach($periods as $period)
+                                        <option value="{{$period->id}}">{{$period->description}}</option>
+                                    @endforeach
                                 </select>
 
-                                @if ($errors->has('email'))
+                                @if ($errors->has('period'))
                                     <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
+                                        <strong>{{ $errors->first('period') }}</strong>
                                     </span>
                                 @endif
                             </div>
