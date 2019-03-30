@@ -14,13 +14,13 @@ class CreateRequestsTable extends Migration
     public function up()
     {
         Schema::create('requests', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->increments('id');
             $table->integer('infrastructure_id')->unsigned();
             $table->foreign('infrastructure_id')->references('id')->on('infrastructures');
             $table->integer('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events');
-            $table->integer('periods_id')->unsigned();
-            $table->foreign('periods_id')->references('id')->on('periods');
+            $table->integer('period_id')->unsigned();
+            $table->foreign('period_id')->references('id')->on('periods');
             $table->timestamps();
         });
     }
