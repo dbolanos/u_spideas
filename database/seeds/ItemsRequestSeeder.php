@@ -12,6 +12,9 @@ class ItemsRequestSeeder extends Seeder
     public function run()
     {
         //
-        ['Aula','Gimnasio', 'Biblioteca'];
+        $infraestructures = ['Aula','Gimnasio', 'Biblioteca', 'Auditorio', 'Materiales'];
+        foreach($infraestructures as $infraestructure){
+
+        }
     }
 }
