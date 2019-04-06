@@ -39,7 +39,7 @@
                             <a class="nav-link" href="#">Tramites</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"> <i class="fas fa-calendar-alt"></i> Eventos</a>
+                            <a class="nav-link" href="{{route('all.events')}}"> <i class="fas fa-calendar-alt"></i> Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('my.student.requests')}}"> <i class="fas fa-archive"></i> Mis Solicitudes</a>
