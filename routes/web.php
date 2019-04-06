@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get  ('crear-solicitudes'    , ['as' => 'create.request'    , 'uses'  => 'RequestController@create']);
+Route::get  ('mis-solicitudes'      , ['as' => 'my.student.requests'    , 'uses'  => 'StudentController@showRequestStudent']);
+Route::get  ('crear-solicitudes'    , ['as' => 'create.student.request'         , 'uses'  => 'RequestController@createRequestStudent']);
+Route::post ('generar-solicitud-estudiante'   , ['as' => 'generate.student.request'         , 'uses'  => 'RequestController@generateRequestStudent']);

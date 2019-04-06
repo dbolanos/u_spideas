@@ -15,11 +15,13 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('infrastructure_id')->unsigned();
+            $table->bigInteger('student_id')->unsigned();
+            $table->foreign('student_id')->references('id')->on('students');
+            $table->bigInteger('infrastructure_id')->unsigned();
             $table->foreign('infrastructure_id')->references('id')->on('infrastructures');
-            $table->integer('event_id')->unsigned();
+            $table->bigInteger('event_id')->unsigned();
             $table->foreign('event_id')->references('id')->on('events');
-            $table->integer('period_id')->unsigned();
+            $table->bigInteger('period_id')->unsigned();
             $table->foreign('period_id')->references('id')->on('periods');
             $table->timestamps();
         });
