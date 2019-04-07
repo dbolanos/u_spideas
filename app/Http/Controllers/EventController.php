@@ -32,4 +32,51 @@ class EventController extends Controller
         return redirect()->route('all.events')->with('message', $message);
     }
 
+    public function edit($id){
+        try{
+            $event = Event::find($id);
+
+            return view('admin.events.edit', compact('event'));
+        }catch(\Exception $e){
+            \Log::error('Ha ocurrido un error en edit_event, Mensaje: ' .$e->get_Message());
+            $message   = ['type_message' => 'danger', 'msg' => 'No se ha encontrado el evento #'. $id];
+            return redirect()->route('all.events')->with('message', $message);
+        }
+
+    }
+
+    public function update(Request $request){
+        try{
+            $event = Event::find($request->event_id);
+
+            $event->description = $request->descrip_event;
+
+            $event->save();
+
+            $message   = ['type_message' => 'success', 'msg' => 'Se ha actualizado el evento con exito! Evento #'. $event->id];
+            return redirect()->route('all.events')->with('message', $message);
+        }catch(\Exception $e){
+            \Log::error('Ha ocurrido un error en update_event, Mensaje: ' .$e->get_Message());
+            $message   = ['type_message' => 'danger', 'msg' => 'Ha ocurrido un error con el evento #'. $request->event_id];
+            return redirect()->route('all.events')->with('message', $message);
+        }
+
+    }
+
+    public function delete($id){
+        try{
+            $event = Event::find($id);
+
+            $event->forceDelete();
+
+            $message   = ['type_message' => 'success', 'msg' => 'Se ha borrado el evento con exito!'];
+            return redirect()->route('all.events')->with('message', $message);
+        }catch(\Exception $e){
+            \Log::error('Ha ocurrido un error en delete_event, Mensaje: ' .$e->get_Message());
+            $message   = ['type_message' => 'danger', 'msg' => 'Ha ocurrido un error con el evento #'. $id];
+            return redirect()->route('all.events')->with('message', $message);
+        }
+    }
+
+
 }

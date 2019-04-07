@@ -27,3 +27,6 @@ Route::post ('generar-solicitud-estudiante'     , ['as' => 'generate.student.req
 Route::get  ('eventos'              , ['as' => 'all.events'         , 'uses'  => 'EventController@index']);
 Route::get  ('crear-evento'         , ['as' => 'create.event'       , 'uses'  => 'EventController@create']);
 Route::post ('generar-evento'       , ['as' => 'generate.event'     , 'uses'  => 'EventController@generateEvent']);
+Route::get  ('editar-evento/{id}'   , ['as' => 'edit.event'         , 'uses'  => 'EventController@edit']);
+Route::post ('editar-evento'        , ['as' => 'update.event'       , 'uses'  => 'EventController@update']);
+Route::get ('delete/{id}'          , ['as' => 'delete.event'       , 'uses'  => 'EventController@delete']);

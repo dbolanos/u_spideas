@@ -29,8 +29,8 @@
                                             <td>{{$event->id}}</td>
                                             <td>{{$event->description}}</td>
                                             <td>
-                                                <a href="#edit" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
-                                                <a href="#delete" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>
+                                                <a href="{{route('edit.event', ['id' => $event->id])}}" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
+                                                <a href="{{route('delete.event', ['id' => $event->id])}}" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
