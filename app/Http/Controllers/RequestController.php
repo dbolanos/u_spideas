@@ -75,6 +75,17 @@ class RequestController extends Controller
     }
 
     public function delete($id){
+        try{
+            $student_request = RequestStudent::find($id);
 
+            $student_request->forceDelete();
+
+            $message   = ['type_message' => 'success', 'msg' => 'Se ha borrado la solicitud con exito!'];
+            return redirect()->route('my.student.requests')->with('message', $message);
+        }catch(\Exception $e){
+            \Log::error('Ha ocurrido un error en delete_studentRequest, Mensaje: ' .$e->getMessage());
+            $message   = ['type_message' => 'danger', 'msg' => 'Ha ocurrido un error con la solicitud #'. $id];
+            return redirect()->route('my.student.requests')->with('message', $message);
+        }
     }
 }
