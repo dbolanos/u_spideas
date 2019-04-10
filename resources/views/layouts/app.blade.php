@@ -39,6 +39,9 @@
                             <a class="nav-link" href="#">Tramites</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{route('all.infrastructures')}}"> <i class="fas fa-building"></i> Infraestructuras</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{route('all.events')}}"> <i class="fas fa-calendar-alt"></i> Eventos</a>
                         </li>
                         <li class="nav-item">

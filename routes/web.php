@@ -29,4 +29,12 @@ Route::get  ('crear-evento'         , ['as' => 'create.event'       , 'uses'  =>
 Route::post ('generar-evento'       , ['as' => 'generate.event'     , 'uses'  => 'EventController@generateEvent']);
 Route::get  ('editar-evento/{id}'   , ['as' => 'edit.event'         , 'uses'  => 'EventController@edit']);
 Route::post ('editar-evento'        , ['as' => 'update.event'       , 'uses'  => 'EventController@update']);
-Route::get ('delete/{id}'          , ['as' => 'delete.event'       , 'uses'  => 'EventController@delete']);
+Route::get  ('borrar-evento/{id}'          , ['as' => 'delete.event'       , 'uses'  => 'EventController@delete']);
+
+
+Route::get  ('infraestructuras'              , ['as' => 'all.infrastructures'        , 'uses'  => 'InfrastructureController@index']);
+Route::get  ('crear-infraestructura'         , ['as' => 'create.infrastructure'       , 'uses'  => 'InfrastructureController@create']);
+Route::post ('generar-infraestructura'       , ['as' => 'generate.infrastructure'     , 'uses'  => 'InfrastructureController@generateInfrastructure']);
+Route::get  ('editar-infraestructura/{id}'   , ['as' => 'edit.infrastructure'         , 'uses'  => 'InfrastructureController@edit']);
+Route::post ('editar-infraestructura'        , ['as' => 'update.infrastructure'       , 'uses'  => 'InfrastructureController@update']);
+Route::get  ('borrar-infraestructura/{id}'   , ['as' => 'delete.infrastructure'       , 'uses'  => 'InfrastructureController@delete']);

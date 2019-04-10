@@ -11,10 +11,10 @@
                     </div>
                 @endif
                 <div class="card">
-                    <div class="card-header">Eventos</div>
+                    <div class="card-header">Infraestructuras</div>
                     <div class="card-body">
                         <div class="form-group row">
-                            @if(count($events) > 0)
+                            @if(count($infrastructures) > 0)
                                 <table class="table table-condensed">
                                     <thead>
                                     <tr>
@@ -24,13 +24,13 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    @foreach($events as $event)
+                                    @foreach($infrastructures as $infrastructure)
                                         <tr>
-                                            <td>{{$event->id}}</td>
-                                            <td>{{$event->description}}</td>
+                                            <td>{{$infrastructure->id}}</td>
+                                            <td>{{$infrastructure->description}}</td>
                                             <td>
-                                                <a href="{{route('edit.event', ['id' => $event->id])}}" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
-                                                <a href="{{route('delete.event', ['id' => $event->id])}}" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>
+                                                <a href="{{route('edit.infrastructure', ['id' => $infrastructure->id])}}" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
+                                                <a href="{{route('delete.infrastructure', ['id' => $infrastructure->id])}}" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -38,12 +38,12 @@
                                 </table>
                                 <div class="row">
                                     <div class="col-md-12 text-center">
-                                        {{$events->links()}}
+                                        {{$infrastructures->links()}}
                                     </div>
                                 </div>
                             @else
                                 <div class="alert alert-warning">
-                                    No se ha encontrado ningún evento
+                                    No se ha encontrado ninguna infraestructura
                                 </div>
                             @endif
 
@@ -51,7 +51,7 @@
                     </div>
                     <div class="card-footer">
                         <div class="form-group row">
-                            <a href="{{route('create.event')}}" class="btn btn-primary pull-right"> Crear Evento <i class="fas fa-plus-square"></i></a>
+                            <a href="{{route('create.infrastructure')}}" class="btn btn-primary pull-right"> Agregar Infraestructura <i class="fas fa-plus-square"></i></a>
                         </div>
                     </div>
                 </div>
