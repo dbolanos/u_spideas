@@ -1,10 +1,13 @@
 <?php
 
+<<<<<<< HEAD
 define('RDS_HOSTNAME', $_SERVER['RDS_HOSTNAME']);
 define('RDS_USERNAME', $_SERVER['RDS_USERNAME']);
 define('RDS_PASSWORD', $_SERVER['RDS_PASSWORD']);
 define('RDS_DB_NAME', $_SERVER['RDS_DB_NAME']);
 
+=======
+>>>>>>> e62f2b5806cb245a3b0263a4cd814e77f68e1450
 return [
 
     /*
@@ -45,6 +48,7 @@ return [
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
 
+<<<<<<< HEAD
         /*'mysql' => [
             'driver' => 'mysql',
             'host' => RDS_HOSTNAME,
@@ -64,6 +68,8 @@ return [
             ]) : [],
         ],*/
 
+=======
+>>>>>>> e62f2b5806cb245a3b0263a4cd814e77f68e1450
         'mysql' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),

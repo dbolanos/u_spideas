@@ -20,8 +20,11 @@ Homestead.json
 .rocketeer/
 
 .idea/*
+<<<<<<< HEAD
 
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
 !.elasticbeanstalk/*.global.yml
+=======
+>>>>>>> e62f2b5806cb245a3b0263a4cd814e77f68e1450
