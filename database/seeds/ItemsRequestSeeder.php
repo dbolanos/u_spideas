@@ -44,10 +44,5 @@ class ItemsRequestSeeder extends Seeder
         foreach($periods as $period){
             Period::create($period);
         }
-<<<<<<< HEAD
-
-        
-=======
->>>>>>> e62f2b5806cb245a3b0263a4cd814e77f68e1450
     }
 }
