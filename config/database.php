@@ -1,5 +1,10 @@
 <?php
 
+define('RDS_HOSTNAME', $_SERVER['RDS_HOSTNAME']);
+define('RDS_USERNAME', $_SERVER['RDS_USERNAME']);
+define('RDS_PASSWORD', $_SERVER['RDS_PASSWORD']);
+define('RDS_DB_NAME', $_SERVER['RDS_DB_NAME']);
+
 return [
 
     /*
@@ -39,6 +44,25 @@ return [
             'prefix' => '',
             'foreign_key_constraints' => env('DB_FOREIGN_KEYS', true),
         ],
+
+        /*'mysql' => [
+            'driver' => 'mysql',
+            'host' => RDS_HOSTNAME,
+            'port' => env('DB_PORT', '3306'),
+            'database' => RDS_DB_NAME,
+            'username' => RDS_USERNAME,
+            'password' => RDS_PASSWORD,
+            'unix_socket' => env('DB_SOCKET', ''),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'strict' => true,
+            'engine' => null,
+            'options' => extension_loaded('pdo_mysql') ? array_filter([
+                PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+            ]) : [],
+        ],*/
 
         'mysql' => [
             'driver' => 'mysql',
