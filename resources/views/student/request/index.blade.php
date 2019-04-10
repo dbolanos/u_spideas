@@ -31,8 +31,8 @@
                                             <td>{{$student_request->event->description}}</td>
                                             <td>{{$student_request->period->description}}</td>
                                             <td>
-                                                <a href="#edit" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
-                                                <a href="#delete" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>
+                                                <a href="{{route('edit.student.request', ['id' => $student_request->id])}}" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
+                                                <a href="{{route('delete.student.request', ['id' => $student_request->id])}}" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>
                                             </td>
                                         </tr>
                                         @endforeach

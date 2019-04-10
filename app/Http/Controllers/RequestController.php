@@ -44,7 +44,37 @@ class RequestController extends Controller
         $message   = ['type_message' => 'success', 'msg' => 'La solicitud ha sido creada con exito! Solicitud #'. $request_student->id];
 
         return redirect()->route('my.student.requests')->with('message', $message);
+    }
 
+    public function editRequestStudent($id){
+        try{
+            $student_request = RequestStudent::find($id);
+            $infrastructures   = Infrastructure::all();
+            $events             = Event::all();
+            $periods            = Period::all();
+
+            return view('student.request.edit', compact('student_request','infrastructures', 'events', 'periods'));
+
+        }catch(\Exception $e){
+            \Log::error('Error find RequestStudent, id: ' . $id .' Message: ' .$e->getMessage());
+            $message   = ['type_message' => 'danger', 'msg' => 'Error, No se encontró la solicitud! Solicitud #'. $id];
+            return redirect()->route('my.student.requests')->with('message', $message);
+
+        }
+    }
+
+    public function updateRequestStudent(Request $request){
+        Validator::make($request->all(), $this->getRulesCreateRequest())->validate();
+        $request_student = RequestStudent::find($request->student_request_id);
+        $request_student->infrastructure_id = $request->infra;
+        $request_student->event_id          = $request->event;
+        $request_student->period_id         = $request->period;
+        $request_student->save();
+        $message   = ['type_message' => 'success', 'msg' => 'La solicitud ha sido actualizada con exito! Solicitud #'. $request_student->id];
+        return redirect()->route('my.student.requests')->with('message', $message);
+    }
+
+    public function delete($id){
 
     }
 }
