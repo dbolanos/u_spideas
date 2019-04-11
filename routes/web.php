@@ -30,6 +30,13 @@ Route::group(['prefix' => 'estudiante','middleware' => ['auth', 'role:student']]
 });
 
 Route::group(['prefix' => 'admin','middleware' => ['auth', 'role:admin']], function () {
+    Route::get('solicitudes'        , ['as' => 'all.requests'       , 'uses'    => 'RequestController@showRequest']);
+    Route::get  ('crear-solicitud'  , ['as' => 'create.request'     , 'uses'    => 'RequestController@createRequest']);
+    Route::post ('generar-solicitud', ['as' => 'generate.request'   , 'uses'    => 'RequestController@generateRequest']);
+    Route::get  ('editar-solicitud/{id}' , ['as' => 'edit.request'  , 'uses'    => 'RequestController@editRequest']);
+    Route::post ('editar-solicitud'      , ['as' => 'update.request', 'uses'    => 'RequestController@updateRequest']);
+    Route::post ('search-students'  , ['as' => 'search.students'    , 'uses'    => 'RequestController@searchStudents' ]);
+
     Route::get('eventos'            , ['as' => 'all.events'     , 'uses' => 'EventController@index']);
     Route::get('crear-evento'       , ['as' => 'create.event'   , 'uses' => 'EventController@create']);
     Route::post('generar-evento'    , ['as' => 'generate.event' , 'uses' => 'EventController@generateEvent']);
@@ -43,4 +50,6 @@ Route::group(['prefix' => 'admin','middleware' => ['auth', 'role:admin']], funct
     Route::get  ('editar-infraestructura/{id}'   , ['as' => 'edit.infrastructure'         , 'uses'  => 'InfrastructureController@edit']);
     Route::post ('editar-infraestructura'        , ['as' => 'update.infrastructure'       , 'uses'  => 'InfrastructureController@update']);
     Route::get  ('borrar-infraestructura/{id}'   , ['as' => 'delete.infrastructure'       , 'uses'  => 'InfrastructureController@delete']);
+
+    Route::get ('reporte'           , ['as' => 'report'                                   , 'uses'  => 'ReportController@showReport']);
 });

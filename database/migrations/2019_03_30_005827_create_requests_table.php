@@ -23,6 +23,8 @@ class CreateRequestsTable extends Migration
             $table->foreign('event_id')->references('id')->on('events');
             $table->bigInteger('period_id')->unsigned();
             $table->foreign('period_id')->references('id')->on('periods');
+            $table->bigInteger('request_status_id')->unsigned();
+            $table->foreign('request_status_id')->references('id')->on('request_statuses');
             $table->timestamps();
         });
     }

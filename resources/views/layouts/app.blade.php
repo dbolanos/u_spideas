@@ -37,13 +37,16 @@
                     <ul class="navbar-nav mr-auto">
                         @role(['admin'])
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Tramites</a>
+                            <a class="nav-link" href="{{route('all.requests')}}"><i class="fas fa-boxes"></i> Tramites</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('all.infrastructures')}}"> <i class="fas fa-building"></i> Infraestructuras</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('all.events')}}"> <i class="fas fa-calendar-alt"></i> Eventos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('report')}}"> <i class="fas fa-chart-bar"></i> Reportes</a>
                         </li>
                         @endrole
                         @role(['student'])

@@ -89,8 +89,8 @@ class RegisterController extends Controller
                 'user_id'               => $user->id,
             ]);
 
-            //Attach Customer role
-//            $user->roles()->attach(4);
+            //Attach Student role
+            $user->roles()->attach(2);
         });
 
         return $user;

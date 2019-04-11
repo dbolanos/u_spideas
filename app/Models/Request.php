@@ -13,6 +13,10 @@ class Request extends Model
         return $this->belongsTo('App\Models\Student');
     }
 
+    public function requestStatus(){
+        return $this->belongsTo('App\Models\RequestStatus');
+    }
+
     public function event(){
         return $this->belongsTo('App\Models\Event');
     }

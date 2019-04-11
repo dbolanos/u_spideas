@@ -21,6 +21,7 @@
                                             <th>Infraestructura</th>
                                             <th>Evento</th>
                                             <th>Periodo</th>
+                                            <th>Status</th>
                                             <th>Acciones</th>
                                         </tr>
                                         </thead>
@@ -30,6 +31,7 @@
                                             <td>{{$student_request->infrastructure->description}}</td>
                                             <td>{{$student_request->event->description}}</td>
                                             <td>{{$student_request->period->description}}</td>
+                                            <td>{{$student_request->requestStatus->description}}</td>
                                             <td>
                                                 <a href="{{route('edit.student.request', ['id' => $student_request->id])}}" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
                                                 <a href="{{route('delete.student.request', ['id' => $student_request->id])}}" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>

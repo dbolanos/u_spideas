@@ -16,4 +16,8 @@ class Student extends Model
     public function requests(){
         return $this->hasMany('App\Models\Request');
     }
+
+    public function getFullName(){
+        return $this->first_name .' '. $this->first_surname .' '. $this->second_surname;
+    }
 }

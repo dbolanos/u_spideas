@@ -74,6 +74,10 @@
                                     @endif
                                 </div>
                             </div>
+                            <div class="form-group row">
+                                <label for="" class="col-md-4 col-form-label text-md-right">Status <i class="far fa-compass"></i> </label>
+                                <input type="text" class="" value="{{$student_request->requestStatus->description}}" disabled></input>
+                            </div>
                             <button type="submit" class="btn btn-success"> Editar Solicitud <i class="fas fa-arrow-circle-right"></i></button>
                         </form>
                     </div>
