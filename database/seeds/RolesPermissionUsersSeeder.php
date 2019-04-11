@@ -100,5 +100,22 @@ class RolesPermissionUsersSeeder extends Seeder
         $student->user_id               = 2;
         $student->save();
 
+
+        $user_student_2              = new User();
+        $user_student_2->name        = 'Sofia Sequeira Gomez';
+        $user_student_2->email       = 'ssequeira@test.test';
+        $user_student_2->password    = bcrypt('testtest');
+        $user_student_2->save();
+        $user_student_2->roles()->attach($student_rol->id);
+
+        $student_2 = new Student();
+        $student_2->first_name            = 'Sofia';
+        $student_2->first_surname         = 'Sequeira';
+        $student_2->second_surname        = 'Gomez';
+        $student_2->email                 = 'ssequeira@test.test';
+        $student_2->identification_card   = '409870123';
+        $student_2->user_id               = 2;
+        $student_2->save();
+
     }
 }
