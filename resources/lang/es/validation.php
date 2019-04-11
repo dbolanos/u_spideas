@@ -121,5 +121,9 @@ return [
         'email'             => 'correo',
         'phone'             => 'telefono',
         'address_line'      => 'dirección exacta',
+        'student_id_request'=> 'Estudiante',
+        'infra'             => 'Infraestructura',
+        'event'             => 'Evento',
+        'period'            => 'Periodo',
 	],
 ];
