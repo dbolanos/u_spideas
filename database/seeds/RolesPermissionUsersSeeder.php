@@ -114,7 +114,7 @@ class RolesPermissionUsersSeeder extends Seeder
         $student_2->second_surname        = 'Gomez';
         $student_2->email                 = 'ssequeira@test.test';
         $student_2->identification_card   = '409870123';
-        $student_2->user_id               = 2;
+        $student_2->user_id               = 3;
         $student_2->save();
 
     }
