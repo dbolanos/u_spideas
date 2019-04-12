@@ -15,7 +15,7 @@
               <div class="text-center">
                 <h1 class="h4 text-gray-900 mb-4">Crear una cuenta</h1>
               </div>
-              <form class="user" method="POST" action="{{ route('register') }}" id="register">
+              <form class="user" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="form-group row">
                   <div class="col-sm-6 mb-3 mb-sm-0">
@@ -88,14 +88,13 @@
                     @endif
                   </div>
                   <div class="col-sm-6">
-                    <input type="password" class="form-control form-control-user" id="password-confirm"
-                    name="password-confirm" placeholder="Confirmar Contraseña" required>
+                    <input type="password" class="form-control form-control-user" id="password-confirmation"
+                    name="password-confirmation" placeholder="Confirmar Contraseña" required>
                   </div>
                 </div>
-                <a href="{{ route('register') }}" class="btn btn-primary btn-user btn-block"
-                onclick="document.getElementById('register').submit();">
+                <button type="submit" class="btn btn-primary btn-user btn-block">
                   Registrarse
-                </a>
+                </button>
               </form>
               <hr>
               <div class="text-center">

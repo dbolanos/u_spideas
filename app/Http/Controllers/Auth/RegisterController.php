@@ -57,7 +57,6 @@ class RegisterController extends Controller
             'first_surname'         => ['required', 'string', 'max:255'],
             'second_surname'        => ['required', 'string', 'max:255'],
             'identification_card'   => ['required', 'string', 'max:12'],
-            'password'              => 'required|string|min:8|confirmed|regex:/^.*(?=.{3,})(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[\d\X])(?=.*[.,;!$#%@*-\/_+&()=]).*$/',
         ]);
 
     }

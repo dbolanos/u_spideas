@@ -59,10 +59,9 @@
                         <label class="custom-control-label" for="customCheck">Recordarme</label>
                       </div>
                     </div>
-                    <a href="#" class="btn btn-primary btn-user btn-block"
-                    onclick="document.getElementById('login').submit();">
+                    <button type="submit" class="btn btn-primary btn-user btn-block">
                       Ingresar
-                    </a>
+                    </button>
                   </form>
                   <hr>
                   <div class="text-center">
