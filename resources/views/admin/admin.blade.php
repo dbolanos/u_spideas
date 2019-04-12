@@ -27,6 +27,8 @@
     <link href="plugins/daterangepicker/daterangepicker-bs3.css" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -889,6 +891,8 @@
     </footer>
 </div><!-- ./wrapper -->
 
+<script src="{{ asset('js/sb-admin-2.js')}}"></script>
+<script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
 <!-- jQuery 2.1.3 -->
 <script src="plugins/jQuery/jQuery-2.1.3.min.js"></script>
 <!-- jQuery UI 1.11.2 -->

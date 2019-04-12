@@ -25,9 +25,11 @@
     <link rel="stylesheet" href="css/guest/magnific-popup.css">
     <link rel="stylesheet" href="css/guest/animate.min.css">
     <link rel="stylesheet" href="css/guest/main.css">
+    <link href="{{ asset('css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 </head>
-<body>
-
+<body class="bg-gray-300">
+<!--
 <header id="header" id="home">
     <div class="container">
         <div class="row align-items-center justify-content-between d-flex">
@@ -37,10 +39,10 @@
             <nav id="nav-menu-container">
                 <ul class="nav-menu-guest">
                     <li class="menu-active"><a href="/">Inicio</a></li>
-                    <li><a href="{{ route('login') }}">Iniciar Sesión</a></li>
+                    <li class="nav-link"><a href="{{ route('login') }}">Iniciar Sesión</a></li>
                     <li><a class="ticker-btn" href="{{ route('register') }}">Registrarse como estudiante</a></li>
                 </ul>
-            </nav><!-- #nav-menu-container -->
+            </nav>
         </div>
     </div>
 </header><!-- #header -->

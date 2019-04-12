@@ -20,81 +20,102 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.css')}}" rel="stylesheet">
+    <link href="{{ asset('css/sb-admin-2.min.css')}}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <i class="fab fa-battle-net"></i> {{ config('app.name', 'U-SPIDEAS') }}
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+        <div id="wrapper">
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav mr-auto">
-                        @role(['admin'])
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('all.requests')}}"><i class="fas fa-boxes"></i> Tramites</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('all.infrastructures')}}"> <i class="fas fa-building"></i> Infraestructuras</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('all.events')}}"> <i class="fas fa-calendar-alt"></i> Eventos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('report')}}"> <i class="fas fa-chart-bar"></i> Reportes</a>
-                        </li>
-                        @endrole
-                        @role(['student'])
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{route('my.student.requests')}}"> <i class="fas fa-archive"></i> Mis Solicitudes</a>
-                        </li>
-                        @endrole
-                    </ul>
+            <!-- Sidebar-->
+            <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ml-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">Iniciar Sesión</a>
-                            </li>
-                            @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">Registrarse</a>
-                                </li>
-                            @endif
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    <i class="fas fa-user"></i>  {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Cerrar Sesión') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+              <a class="sidebar-brand d-flex align-items-center justify-content-center" href="{{route('home')}}">
+                <div class="sidebar-brand-icon rotate-n-15">
+                  <i class="fab fa-battle-net"></i>
                 </div>
-            </div>
-        </nav>
+                <div class="sidebar-brand-text mx-3"> {{ config('app.name', 'U-SPIDEAS') }}</div>
+              </a>
+
+              <hr class="sidebar-divider my-0">
+
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ route('home')}}">
+                  <i class="fas fa-fw fa-tachometer-alt"></i>
+                  <span>Inicio</span></a>
+              </li>
+
+              <hr class="sidebar-divider">
+
+              <div class="sidebar-heading">
+                Menu Principal
+              </div>
+              @role(['admin'])
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('all.requests')}}"  aria-expanded="true" aria-controls="collapseTwo">
+                  <i class="fas fa-fw fa-boxes"></i>
+                  <span>Tramites</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('all.infrastructures')}}"  aria-expanded="true" aria-controls="collapseUtilities">
+                  <i class="fas fa-fw fa-building"></i>
+                  <span>Infraestructuras</span>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('all.events')}}">
+                  <i class="fas fa-fw fa-calendar-alt"></i>
+                  <span>Eventos</span></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('report')}}">
+                  <i class="fas fa-fw fa-chart-bar"></i>
+                  <span>Reportes</span></a>
+              </li>
+              @endrole
+              @role(['student'])
+              <li class="nav-item">
+                <a class="nav-link" href="{{route('my.student.requests')}}">
+                  <i class="fas fa-fw fa-archive"></i>
+                  <span>Mis Solicitudes</span></a>
+              </li>
+              @endrole
+
+            </ul>
+            <!-- Content Wrapper -->
+            <div id="content-wrapper" class="d-flex flex-column">
+
+              <!-- Main Content -->
+              <div id="content">
+
+                <!-- Topbar -->
+              @include('partials.topbar')
+                <!-- End of Topbar -->
 
         <main class="py-4">
-            @yield('content')
+            <div class="container-fluid">
+              @yield('content')
+            </div>
+
         </main>
+
+      </div>
+      <footer class="sticky-footer bg-gray-700">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto text-gray-100">
+            <span><b>Copyright &copy; CAF Projects 2019</b></span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Content Wrapper -->
     </div>
+    </div>
+  <!-- End of Page Wrapper -->
+    <script src="{{ asset('js/sb-admin-2.js')}}"></script>
+    <script src="{{ asset('js/sb-admin-2.min.js')}}"></script>
 </body>
 </html>

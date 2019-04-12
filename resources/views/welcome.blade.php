@@ -3,16 +3,13 @@
 
 <!-- start banner Area -->
 <section class="banner-area relative" id="home">
-    <div class="overlay overlay-bg"></div>
+    <div class="overlay overlay-bg bg-gray-300"></div>
     <div class="container">
         <div class="row fullscreen d-flex align-items-center justify-content-center">
             <div class="banner-content col-lg-8">
-                <h1 class="text-white">
+                <h1 class="text-gray-800">
                     U-Spideas
                 </h1>
-                <p class="pt-20 pb-20 text-white">
-                    Spideas es el medio oficial que tiene como objetivo informar a la Comunidad Universitaria, Profesores y  demás funcionarios de la universidad acerca de los inmuebles de la institución,  con el fin de facilitar materiales a los estudiantes y fortalecer la confianza y eficiencia de la universitaria.
-                </p>
             </div>
         </div>
     </div>
@@ -23,47 +20,20 @@
 <section class="feature-area pb-100" id="service">
     <div class="container">
         <div class="row mockup-container">
-            <img class="mx-auto d-block img-fluid" src="img/federaciones.png" alt="">
+            <img class="mx-auto d-block img-fluid border-0 shadow-lg" src="img/deas.png" alt="">
         </div>
         <div class="row d-flex justify-content-center">
             <div class="menu-content pt-100 pb-60 col-lg-10">
-                <div class="title text-center">
-                    <h1 class="mb-10">U-Spideas</h1>
-                    <p>Spideas es el medio oficial que tiene como objetivo informar a la Comunidad Universitaria, Profesores y  demás funcionarios de la universidad acerca de los inmuebles de la institución,  con el fin de facilitar materiales a los estudiantes y fortalecer la confianza y eficiencia de la universitaria.</p>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="single-feature">
-                    <span class="lnr lnr-screen"></span>
-                    <h4>
-                        Visión
-                    </h4>
-                    <p>
-                        Ser una herramienta a la vanguardia en la formación integral de profesionales, la investigación y la extensión en las áreas técnicas y tecnológicas, que contribuya al desarrollo de los estudiantes.
+                <div class="title text-center text-gray-900">
+                    <p>La Dirección de Extensión y Acción Social (DEAS) de la Sede Central de la UTN fue
+                      creada en el año 2011 con la finalidad de dirigir e implementar dentro de la sede
+                      aquellas acciones formativas no formales, establecidas en el Marco Metodológico
+                      de la Vicerrectoría de Extensión y Acción Social (VEAS).
                     </p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-feature">
-                    <span class="lnr lnr-code"></span>
-                    <h4>
-                        Misión
-                    </h4>
                     <p>
-                        Brindar un servicio, integral e inclusivo, centrando nuestra acción académica en el área técnica y tecnológica.
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="single-feature">
-                    <span class="lnr lnr-clock"></span>
-                    <h4>
-                        Solidaridad
-                    </h4>
-                    <p>
-                        Somos conscientes de las necesidades de los estudiantes, por lo tanto procuramos el apoyo y colaboración mutua.
+                      Desde sus inicios la DEAS fue creada como un conjunto de programas, cada uno
+                      de ellos representado por una coordinación los cuales se encargan de promocionar
+                      y ejecutar las acciones formativas referentes a su área
                     </p>
                 </div>
             </div>
@@ -73,5 +43,3 @@
 <!-- End feature Area -->
 
 @include('partials.footerGuestMain')
-
-
