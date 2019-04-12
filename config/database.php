@@ -42,11 +42,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => RDS_HOSTNAME,
+            'host' => env('RDS_HOSTNAME'),
             'port' => env('DB_PORT', '3306'),
-            'database' => RDS_DB_NAME,
-            'username' => RDS_USERNAME,
-            'password' => RDS_PASSWORD,
+            'database' => env('RDS_DB_NAME'),
+            'username' => env('RDS_USERNAME'),
+            'password' => env('RDS_PASSWORD'),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
