@@ -29,8 +29,21 @@
                                             <td>{{$infrastructure->id}}</td>
                                             <td>{{$infrastructure->description}}</td>
                                             <td>
-                                                <a href="{{route('edit.infrastructure', ['id' => $infrastructure->id])}}" class="btn btn-success"> Editar <i class="fas fa-edit"></i></a>
-                                                <a href="{{route('delete.infrastructure', ['id' => $infrastructure->id])}}" class="btn btn-danger"> Borrar <i class="fas fa-trash-alt"></i></a>
+                                              <a href="{{route('edit.infrastructure', ['id' => $infrastructure->id])}}"
+                                                class="btn btn-info btn-icon-split btn-user ">
+                                                <span class="icon text-white-50">
+                                                  <i class="fas fa-edit"></i>
+                                                </span>
+                                                <span class="text">Editar</span>
+                                              </a>
+                                              <a href="{{route('delete.infrastructure', ['id' => $infrastructure->id])}}"
+                                                class="btn btn-danger btn-icon-split btn-user ">
+                                                <span class="icon text-white-50">
+                                                  <i class="fas fa-trash-alt"></i>
+                                                </span>
+                                                <span class="text">Eliminar</span>
+                                              </a>
+
                                             </td>
                                         </tr>
                                     @endforeach
@@ -51,7 +64,12 @@
                     </div>
                     <div class="card-footer">
                         <div class="form-group row">
-                            <a href="{{route('create.infrastructure')}}" class="btn btn-primary pull-right"> Agregar Infraestructura <i class="fas fa-plus-square"></i></a>
+                          <a href="{{route('create.infrastructure')}}" class="btn btn-primary btn-icon-split btn-user ">
+                            <span class="icon text-white-50">
+                              <i class="fas fa-plus-square"></i>
+                            </span>
+                            <span class="text">Agregar Infraestructura</span>
+                          </a>
                         </div>
                     </div>
                 </div>

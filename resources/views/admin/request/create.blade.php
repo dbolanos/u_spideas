@@ -79,7 +79,7 @@
                         </div>
 
                     <hr>
-                        <form action="{{route('generate.request')}}" method="POST">
+                        <form action="{{route('generate.request')}}" method="POST" id="crear">
                             @csrf
 
                             <div class="form-group row">
@@ -150,13 +150,20 @@
                                     @endif
                                 </div>
                             </div>
-                            <button type="submit" class="btn btn-success"> Crear Solicitud <i class="fas fa-arrow-circle-right"></i></button>
+                            <div class="form-group row">
+                              <a href="" class="btn btn-primary btn-icon-split btn-user "
+                              onclick="document.getElementById('crear').submit();">
+                                <span class="icon text-white-50">
+                                  <i class="fas fa-arrow-circle-right"></i>
+                                </span>
+                                <span class="text">Crear Solicitud</span>
+                              </a>
+                            </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     <script
         src="https://code.jquery.com/jquery-3.4.0.min.js"
         integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg="

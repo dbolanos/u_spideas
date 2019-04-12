@@ -56,7 +56,12 @@
                     </div>
                     <div class="card-footer">
                         <div class="form-group row">
-                            <a href="{{route('create.request')}}" class="btn btn-primary pull-right"> Crear Solicitud <i class="fas fa-plus-square"></i></a>
+                          <a href="{{route('create.request')}}" class="btn btn-primary btn-icon-split btn-user ">
+                            <span class="icon text-white-50">
+                              <i class="fas fa-plus-square"></i>
+                            </span>
+                            <span class="text">Crear Solicitud</span>
+                          </a>
                         </div>
                     </div>
                 </div>
