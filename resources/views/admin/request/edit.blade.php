@@ -56,7 +56,6 @@
                                                 <th scope="col">Primer Apellido</th>
                                                 <th scope="col">Segundo Apellido</th>
                                                 <th scope="col">Cédula o Pasaporte</th>
-                                                <th scope="col">Correo</th>
                                                 <th scope="col">Acción</th>
                                             </tr>
                                             </thead>
@@ -188,7 +187,6 @@
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <script
         src="https://code.jquery.com/jquery-3.4.0.min.js"

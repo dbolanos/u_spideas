@@ -41,7 +41,6 @@ $(document).ready(function () {
                             '<td>'+ student['first_surname'] +'</td>' +
                             '<td>'+ student['second_surname'] +'</td>' +
                             '<td>'+ student['identification_card'] +'</td>' +
-                            '<td>'+ student['email'] +'</td>' +
                             '<td> <button type="button" class="btn btn-success add_student" data-student_id="'+ student['id'] +'" data-full_name="'+ student['first_name'] +' '+ student['first_surname']+'" >Agregar</button></td>' +
                             '</tr>';
                         result_rows += row;
